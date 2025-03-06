@@ -5,7 +5,6 @@ import Login from "./features/auth/screens/Login";
 import ProtectedRoute from "./Layout/ProtectedRoute";
 import Layout from "./Layout/Layout";
 import DashboardScreen from "./features/dashboard/screens/DashboardScreen";
-import DummyScreen from "./features/dashboard/screens/dummy";
 
 function App() {
   return (
