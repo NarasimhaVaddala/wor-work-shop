@@ -1,5 +1,5 @@
-import { ChevronDown } from "lucide-react";
-import React from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import React, { useState } from "react";
 
 let data = [
   {
@@ -50,22 +50,35 @@ let data = [
 ];
 
 const FandQs = () => {
+  const [isDisplay, setIsDisplay] = useState(null);
+
+  const handleDisplay = (index) => {
+    console.log(index);
+
+    setIsDisplay(isDisplay === index ? null : index);
+  };
+
   return (
     <div className="w-full px-20 py-8">
       <div className="w-[60%] flex flex-col gap-3">
         <h2 className="text-xl text-gray-800 font-semibold">FandQs</h2>
         <div className=" rounded-md overflow-hidden">
           {data?.map((each, index) => (
-            <div className="w-full bg-blue-100 p-4 border-b border-gray-300 border-t">
+            <div
+              style={{ backgroundColor: isDisplay === index && "white" }}
+              className="w-full bg-blue-100 p-4 border flex flex-col gap-4"
+            >
               <div className="w-full flex items-center justify-between">
-                <span className="text-base font-semibold">
-                  yhdlkj jsaoiudjad sahdliusa ks
-                </span>
-                <button>
-                  <ChevronDown />
+                <span className="text-base font-semibold">{each?.name}</span>
+                <button onClick={() => handleDisplay(index)}>
+                  {isDisplay === index ? <ChevronUp /> : <ChevronDown />}
                 </button>
               </div>
-              <span></span>
+              {isDisplay === index && (
+                <span className="text-base font-normal leading-6">
+                  {each.description}
+                </span>
+              )}
             </div>
           ))}
         </div>

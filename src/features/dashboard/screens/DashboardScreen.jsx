@@ -5,6 +5,7 @@ import WhatsYouWillLearn from "../components/WhatsYouWillLearn";
 import WhyYouShouldLearnCard from "../components/WhyYouShouldLearnCard";
 import AboutCourse from "../components/AboutCourse";
 import FandQs from "../components/FandQs";
+import CourseCard from "../components/CourseCard";
 
 const DashboardScreen = () => {
   const [sticky, setSticky] = useState(false);
@@ -61,6 +62,7 @@ const DashboardScreen = () => {
           </p>
         </div>
       </div>
+
       {/* software development skills */}
       <div className="w-full px-20 py-8">
         <div className="w-[60%] flex flex-col gap-3">
@@ -129,6 +131,20 @@ const DashboardScreen = () => {
       <AboutCourse />
       {/* f&qs */}
       <FandQs />
+      {/* releated courser */}
+      <div className="w-full px-20 py-8 bg-blue-100 flex flex-col gap-4">
+        <div className="w-[60%] flex flex-col gap-3">
+          <h2 className="text-2xl text-black font-semibold">Related Courses</h2>
+        </div>
+        <div className="flex flex-wrap gap-1 justify-between items-center">
+          <CourseCard />
+          <CourseCard />
+
+          <CourseCard />
+
+          <CourseCard />
+        </div>
+      </div>
     </div>
   );
 };
