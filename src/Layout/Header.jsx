@@ -2,8 +2,11 @@ import { Menu } from "lucide-react";
 import React from "react";
 import SearchBar from "../Utils/SearchBar";
 import Button from "../Utils/Button";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full h-[80px] bg-white shadow-custom px-10 flex items-center justify-around fixed z-20">
       <div className="flex gap-4 items-center">
@@ -15,8 +18,16 @@ const Header = () => {
         <SearchBar />
       </div>
       <div className="flex gap-4 items-center">
-        <Button title="Sign Up" variant="bg" />
-        <Button title="Log In" variant="outline" />
+        <Button
+          title="Sign Up"
+          variant="bg"
+          onclick={() => navigate("/signup")}
+        />
+        <Button
+          title="Log In"
+          variant="outline"
+          onclick={() => navigate("/signup")}
+        />
       </div>
     </div>
   );

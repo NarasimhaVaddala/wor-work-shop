@@ -6,6 +6,10 @@ import ProtectedRoute from "./Layout/ProtectedRoute";
 import Layout from "./Layout/Layout";
 import DashboardScreen from "./features/dashboard/screens/DashboardScreen";
 
+import DummyScreen from "./features/dashboard/screens/dummy";
+import SignUp from "./features/auth/screens/SignUp";
+
+
 function App() {
   return (
     <div className="flex flex-col w-full min-h-[100vh]">
@@ -22,6 +26,7 @@ function App() {
       />
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Layout />}>
             <Route path="/" element={<DashboardScreen />} />
