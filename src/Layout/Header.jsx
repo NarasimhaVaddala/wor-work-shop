@@ -2,7 +2,9 @@ import { Menu } from "lucide-react";
 import React, { useState } from "react";
 import SearchBar from "../Utils/SearchBar";
 import Button from "../Utils/Button";
+
 import DropdownMenu from "./DropdownMenu";
+import { useNavigate } from "react-router-dom";
 
 const courses = [
   {
@@ -27,6 +29,9 @@ const courses = [
 const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const navigate = useNavigate();
+
+
   return (
     <div className="w-full h-[80px] bg-white shadow-custom px-10 flex items-center justify-around fixed z-20">
       <div className="flex gap-4 items-center relative">
@@ -43,8 +48,16 @@ const Header = () => {
         <SearchBar />
       </div>
       <div className="flex gap-4 items-center">
-        <Button title="Sign Up" variant="bg" />
-        <Button title="Log In" variant="outline" />
+        <Button
+          title="Sign Up"
+          variant="bg"
+          onclick={() => navigate("/signup")}
+        />
+        <Button
+          title="Log In"
+          variant="outline"
+          onclick={() => navigate("/signup")}
+        />
       </div>
     </div>
   );
