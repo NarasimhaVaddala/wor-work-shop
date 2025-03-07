@@ -8,7 +8,7 @@ import DashboardScreen from "./features/dashboard/screens/DashboardScreen";
 
 import DummyScreen from "./features/dashboard/screens/dummy";
 import SignUp from "./features/auth/screens/SignUp";
-
+import NewSignup from "./features/auth/screens/NewSignup";
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/new" element={<NewSignup />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<Layout />}>
             <Route path="/" element={<DashboardScreen />} />

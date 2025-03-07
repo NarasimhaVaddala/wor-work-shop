@@ -26,6 +26,13 @@ const DashboardScreen = () => {
 
   return (
     <div className="flex flex-col w-full bg-white">
+      <div
+        className="fixed right-20 top-1/2 -translate-y-1/2 w-32 h-32 bg-white border border-gray-200 
+                   rounded-lg shadow-lg flex items-center justify-center z-50"
+      >
+        <h1 className="text-black text-center">What a Sudden Suppai</h1>
+      </div>
+
       <div className="flex flex-col w-full bg-gradient-to-r to-[#00546c] from-[#012f3c] px-20 py-10">
         <div className="w-[60%] flex flex-col gap-3">
           <span className="text-white flex items-center text-[10px]">

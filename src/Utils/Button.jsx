@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ title, variant = "bg", onclick, customBtnStyles }) => {
+const Button = ({ title, variant = "bg", onclick, customBtnStyles, type }) => {
   const buttonStyles =
     variant === "bg"
       ? "bg-blue-500 text-white border-transparent" // Background with text color
@@ -8,7 +8,8 @@ const Button = ({ title, variant = "bg", onclick, customBtnStyles }) => {
 
   return (
     <button
-      onClick={onclick}
+      // onClick={onclick}
+      type={type}
       className={`h-[40px] px-4 rounded-md ${buttonStyles} ${customBtnStyles}`}
     >
       {title}
