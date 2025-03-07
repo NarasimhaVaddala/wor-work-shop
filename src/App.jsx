@@ -5,6 +5,7 @@ import Login from "./features/auth/screens/Login";
 import ProtectedRoute from "./Layout/ProtectedRoute";
 import Layout from "./Layout/Layout";
 import DashboardScreen from "./features/dashboard/screens/DashboardScreen";
+import FilterScreen from "./features/dashboard/screens/FilterScreen";
 
 import DummyScreen from "./features/dashboard/screens/dummy";
 import SignUp from "./features/auth/screens/SignUp";
@@ -30,6 +31,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route element={<Layout />}>
             <Route path="/" element={<DashboardScreen />} />
+            <Route path="/filter-screen" element={<FilterScreen />} />
           </Route>
         </Route>
       </Routes>
