@@ -1,15 +1,19 @@
 import React from "react";
 
-const CustomSelect = ({ label, options, ...props }) => {
+const CustomSelect = ({ label, options, error, ...props }) => {
   return (
     <div className="w-full">
       <div className="relative">
         <select
-          className="outline-none bg-none border focus:border-2 border-gray-400 focus:border-blue-500 w-full h-full p-3 rounded-sm appearance-none"
+          className={`outline-none bg-none border focus:border-2 w-full h-full p-3 rounded-sm appearance-none ${
+            error
+              ? "border-red-500 focus:border-red-500"
+              : "border-gray-400 focus:border-blue-500"
+          }`}
           {...props}
         >
-          <option value={label} hidden>
-            {label}
+          <option value="" hidden>
+            Select {label}
           </option>
           {options.map((option) => (
             <option key={option.value} value={option.value}>
@@ -17,9 +21,10 @@ const CustomSelect = ({ label, options, ...props }) => {
             </option>
           ))}
         </select>
-        <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
+        {/* Dropdown Icon */}
+        <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
           <svg
-            className="w-4 h-4 text-gray-400"
+            className={`w-4 h-4 ${error ? "text-red-500" : "text-gray-400"}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -32,6 +37,7 @@ const CustomSelect = ({ label, options, ...props }) => {
           </svg>
         </div>
       </div>
+      {error && <p className="text-red-500 text-sm mt-1">{error.message}</p>}
     </div>
   );
 };
